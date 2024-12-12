@@ -62,7 +62,7 @@ table tr td{
     cursor: pointer;
 }
 #messages{
-    float: left;
+
     max-width: 400px;
     max-height: 500px;
     overflow-y: auto;
@@ -72,7 +72,7 @@ table tr td{
     max-height: 500px;
     overflow-y: auto;
    border: 1px solid #ddd;
-    float: left;
+
 
 
 }
