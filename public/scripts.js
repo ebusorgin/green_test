@@ -213,7 +213,7 @@ class Page {
     }
     async http(method, body={}, type = 'POST') {
         let url = `https://api.green-api.com`
-        this.currentInstance.type==='green'?null:url = `https://green.xyyzzz.ru:4000`;
+        this.currentInstance.type==='green'?null:url = `https://green.xyyzzz.ru/api`;
 
         const fetchOptions = {
             method: type,
