@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div id="server_connection">
+    <h3>Подключение к серверу</h3>
+</div>
+
+<div id="root">
+    <div id="login_form">
+        <label for="login">введите логин:</label>
+        <input type="text" id="login" placeholder="Enter login">
+        <button id="btnSetAuth">авторизоваться</button>
+    </div>
+    <div id="main">
+
+
+        <div class="container">
+            <table class="instances-table">
+                <tr>
+                    <td style="width: 10%">
+                        <div class="menu">
+                            <h3>Instances</h3>
+                            <button class="add-instance-btn" onclick="page.popup.show()">Add New Instance</button>
+                            <ul id="instanceList">
+                            </ul>
+                        </div>
+                    </td>
+                    <td style="width: 300px">
+                        <div id="form_green">
+                            <h2>Green-API Methods</h2>
+
+                            <label for="idInstance">idInstance:</label>
+                            <input type="text" id="idInstance" placeholder="Enter idInstance">
+
+                            <label for="apiTokenInstance">ApiTokenInstance:</label>
+                            <input type="text" id="apiTokenInstance" placeholder="Enter ApiTokenInstance">
+
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" id="phoneNumber"
+                                   placeholder="Enter phone number (79998887766)">
+
+                            <button id="btnGetSettings">Get Settings</button>
+                            <button id="btnGetStateInstance">Get State Instance</button>
+
+                            <label for="message">Message:</label>
+                            <input type="text" id="message" placeholder="Enter message">
+
+                            <button id="btnSendMessage">Send Message</button>
+
+                            <label for="fileUrl">File URL:</label>
+                            <input type="text" id="fileUrl" placeholder="Enter file URL">
+
+                            <button id="btnSendFileByUrl">Send File By URL</button>
+                        </div>
+
+                    </td>
+                    <td id="response-container">
+
+                        <label for="response">Response:</label>
+                        <pre id="response"></pre>
+
+                    </td>
+                    <td>
+                        <div id="contacts"></div>
+                        <div  id="messages"></div>
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+        </div>
+
+        <div class="overlay" onclick="page.popup.close()"></div>
+        <div class="popup" id="popup">
+
+            <table>
+                <tr>
+                    <td>
+                        подключить существующий (Green-API)
+                    </td>
+                    <td>создать новый (xyz.ru)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="popupIdInstance"></label>
+                        <input type="text" id="popupIdInstance" placeholder="Enter idInstance">
+                        <label for="popupApiToken"></label>
+                        <input type="text" id="popupApiToken" placeholder="Enter ApiTokenInstance">
+                        <button class="confirm" onclick="page.addInstanceToList()">Add</button>
+                    </td>
+                    <td style="width: 300px">
+                        <img style="width: 300px;height: 300px;border: 1px solid black" src="/loading.gif" id="qr" alt="отсканируй QR Code">
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <div>
+                <span class="cancel" onclick="page.popup.close()">Cancel</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+<script src="scripts.js"></script>
+</body>
+</html>
