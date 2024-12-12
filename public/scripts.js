@@ -268,8 +268,16 @@ class Page {
     async removeInstance(id) {
         const index = this.instances.findIndex(instance => instance.id === id);
             this.currentInstance = this.instances[index];
+            console.log("assssssssss",id,index);
         if (index !== -1) {
-            await this.api.deleteInstanceAccount(this.instances[index])
+            if (this.instances[index].type==='xyz') {
+                await this.api.deleteInstanceAccount(this.instances[index])
+            }
+            $('#form_green').hide()
+            $('#response').clear()
+            $('#contacts').clear()
+            $('#messages').clear()
+            $('#phoneNumber').value = ''
 
             this.instances.splice(index, 1);
             this.storage.set('instances', this.instances);
