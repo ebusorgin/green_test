@@ -66,7 +66,7 @@ export default class User {
             const tws = {
                 whatsapp:new Whatsapp(instance[0]),
                 id:instance[0].id,
-                user_id:[0].user_id,
+                user_id:instance[0].user_id,
             }
             this.socket.emit('whatsappReady', {success: true, instance: instance[0]});
             global.instances.push(tws);
